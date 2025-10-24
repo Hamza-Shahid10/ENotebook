@@ -2,7 +2,7 @@ import express from 'express'
 import connectToMongo from "./db.js"
 import authRoutes from "./routes/auth.js";  
 import notesRoutes from "./routes/notes.js";
-import moviesRoutes from "./routes/movies.js";
+// import moviesRoutes from "./routes/movies.js";
 
 const app = express()
 const port = 1010
@@ -17,7 +17,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/notes", notesRoutes);
 
 //For sample Data
-app.use("/api/test", moviesRoutes)
+// app.use("/api/test", moviesRoutes)
 
 
 app.get('/users', (req, res) => {
@@ -93,6 +93,7 @@ app.delete("/users/:id", (req, res) => {
     })
 })
 
+//App listening
 app.listen(port, () => {
     console.log(`ENotebook app listening on port ${port}`)
 })
